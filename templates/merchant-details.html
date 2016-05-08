@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giving Nigerian small businesses a voice">
+    <meta name="author" content="">
+    <title>{{ selectedMerchant.name }} | E-Shopper</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/prettyPhoto.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/price-range.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/ico/favicon.ico') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='images/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='images/ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='images/ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/ico/apple-touch-icon-57-precomposed.png') }}">
+</head>
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="{{ url_for('static', filename='images/home/logo.png') }}" alt="" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									Lagos
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Abuja</a></li>
+									<li><a href="#">Rivers</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+								<li class="dropdown"><a href="#">Category<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="{{ url_for('category', category_name='Art') }}">Art</a></li> 
+										<li><a href="{{ url_for('category', category_name='Clothes & Fashion') }}">Clothes & Fashion</a></li>
+										<li><a href="{{ url_for('category', category_name='Cosmetics') }}">Cosmetics</a></li>
+										<li><a href="{{ url_for('category', category_name='Craftsmen & Handymen') }}">Craftsmen & Handymen</a></li>
+										<li><a href="{{ url_for('category', category_name='Events') }}">Events</a></li>
+										<li><a href="{{ url_for('category', category_name='Hair & Makeup') }}">Hair & Makeup</a></li>
+										<li><a href="{{ url_for('category', category_name='Food') }}">Food</a></li>
+										<li><a href="{{ url_for('category', category_name='IT') }}">IT</a></li>
+										<li><a href="{{ url_for('category', category_name='Other Services') }}">Other Services</a></li>
+                                    </ul>
+                                </li> 
+								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="blog.html">Blog List</a></li>
+										<li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li> 
+								<li><a href="contact-us.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<form method="get" action="{{ url_for('search') }}" role="search">
+							<div class="search_box pull-right">
+								<input type="text" name="search" placeholder="Search"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="{{ url_for('static', filename= selectedMerchant.img) }}" alt="" />
+								<h3>ZOOM</h3>
+							</div>
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								
+								  <!-- Wrapper for slides -->
+								    <div class="carousel-inner">
+										<div class="item active">
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar1.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar2.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar3.jpg') }}" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar1.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar2.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar3.jpg') }}" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar1.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar2.jpg') }}" alt=""></a>
+										  <a href=""><img src="{{ url_for('static', filename='images/product-details/similar3.jpg') }}" alt=""></a>
+										</div>
+										
+									</div>
+
+								  <!-- Controls -->
+								  <a class="left item-control" href="#similar-product" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								  </a>
+								  <a class="right item-control" href="#similar-product" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								  </a>
+							</div>
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<h2>{{ selectedMerchant.name }}</h2>
+								<p>{{ selectedMerchant.short_desc }}</p>
+								<span>
+									<span>{{ selectedMerchant.state }}</span>
+								</span>
+								<p><b>Address:</b>{{ selectedMerchant.address }}</p>
+								{% for email in emails %}
+									<p><b>email:</b> {{ email.email }}</p>
+								{% endfor %}
+								{% for phoneNo in phoneNos %}
+									<p><b>Number:</b> {{ phoneNo.phone_no }}</p>
+								{% endfor %}
+								<p><b>Time:</b> {{ selectedMerchant.open_time}} - {{selectedMerchant.close_time }}</p>
+								<a href=""><img src="{{ url_for('static', filename='images/product-details/share.png') }}" class="share img-responsive"  alt="" /></a>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+								<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+								<li><a href="#tag" data-toggle="tab">Tag</a></li>
+								<li><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade" id="details" >
+								<p>{{ selectedMerchant.long_desc }}</p>
+							</div>
+						</div>
+					</div><!--/category-tab-->
+					
+					{% if merchantsInSameCategory %} <!--recommended_items-->
+						<div class="recommended_items">
+							<h2 class="title text-center">Other merchants in this category</h2>
+							
+							<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+								{% set count = 0 %}
+									<div class="item active">
+									{% for merchant in merchantsInSameCategory %}
+										<div class="col-sm-4">
+											<div class="product-image-wrapper">
+												<div class="single-products">
+													<div class="productinfo text-center">
+														<img src="{{ url_for('static', filename=merchant.img) }}" alt="" />
+														<h2>{{ merchant.name }}</h2>
+														<p>{{ merchant.short_desc }}</p>
+														<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>See More</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									{% if count == 2 %}
+									</div>
+									<div class="item">
+									{% endif %}
+									{% set count = count + 1 %}
+									{% endfor %}
+									</div>
+								</div>
+								<a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								</a>
+								<a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								</a>			
+							</div>
+						</div>
+					{% endif %} <!--/related_merchants-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer"><!--Footer-->
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Online Help</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Company Information</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/price-range.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
